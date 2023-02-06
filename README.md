@@ -23,7 +23,7 @@ Package functions are stored in 'src/functions/' and can be called using source(
 1. Tecan output is loaded in and converted to a dataframe - OD at time (rows) for each well (columns)
 2. The all wells file is modified to just sample containing wells, and the background (blank) read is removed from OD values
 3. The __corrected_samples__ data frame acts as the input to functions to:
-     4.  merge replicates (collapse triplicate)
-     5.  calculate metrics of growth (doubling_time)
-     6.  Compare growth curves for different conditions (growth_comparison_plots)
+     1. merge replicates (collapse triplicate)
+     2. calculate metrics of growth (doubling_time)
+     3.  Compare growth curves for different conditions (growth_comparison_plots)
 
