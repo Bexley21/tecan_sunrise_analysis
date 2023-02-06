@@ -8,9 +8,9 @@ Used to:
 
 # input files #
 * Tecan/Magellan output file - saved as .xlsx
-* Plate layout file
- * complete 'plate_layout_blank.csv' from 'file_templates' folder with your sample names for each well
-  * all sample names need to end "_X " - for replicates use same name and differnetiate by X
-  * any wells being used as a blank should be filled " blank "
-  * unused wells should have no entry
- * example of the filled file format is in 'file_templates' folder
+      * Plate layout file
+            * complete 'plate_layout_blank.csv' from 'file_templates' folder with your sample names for each well
+            * all sample names need to end "_X " - for replicates use same name and differnetiate by X
+            * any wells being used as a blank should be filled " blank "
+            * unused wells should have no entry
+      * example of the filled file format is in 'file_templates' folder
