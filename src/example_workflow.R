@@ -20,10 +20,13 @@ source("src/functions/growth_comparison_plots.R")
 setwd("~/OneDrive/PhD_UoE/Year2_PhD/lab_book/January_2023/respiration_dependence/tecan_r_tool") #working directory
 tecan_Rawfile<- "data/tecanoutput_antimycinA_test1.xlsx" #tecan output .xlsx you want to call
 plate_layout_file <- "data/plate_layout_completed.csv" #the standard plate_layout file completed for YOUR plate
+highest_time <- 2625 #the final time-point recorded
+time_interval <- 15 #interval seperating the timepoints, in same units
 
 ##MODEL WORKFLOW
 #convert the file to all wells, store as data frame
-all_wells_df <- tecan_file_converter(tecan_Rawfile,"output/check_run/test1_AllWells.csv")
+all_wells_df <- tecan_file_converter(tecan_Rawfile, highest_time, time_interval,
+                                     "output/check_run/test1_AllWells.csv")
 
 #create data frame of relevant samples, and remove background. THIS IS INPUT FOR DOWNSTREAM GRAPHING
 corrected_sample_df <- subtract_background(plate_layout_converter(all_wells_dataframe, plate_layout_file),
