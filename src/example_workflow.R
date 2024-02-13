@@ -6,6 +6,7 @@ library(readxl)
 library(matrixStats)
 library(zoo)
 library(mgcv)
+library(ggpubr)
 
 #functions from src/
 source("src/functions/tecan_file_converter.R")
@@ -29,7 +30,7 @@ all_wells_df <- tecan_file_converter(tecan_Rawfile, highest_time, time_interval,
                                      "output/check_run/test1_AllWells.csv")
 
 #create data frame of relevant samples, and remove background. THIS IS INPUT FOR DOWNSTREAM GRAPHING
-corrected_sample_df <- subtract_background(plate_layout_converter(all_wells_dataframe, plate_layout_file),
+corrected_sample_df <- subtract_background(plate_layout_converter(all_wells_df, plate_layout_file),
                                            "output/check_run/test1_corrected_sample_growth.csv")
 
 ##use replicate_growth to assess the relationship between replicates - save graphs to allocated folder
